@@ -1,0 +1,64 @@
+{
+  "name": "@kredito/npm-package",
+  "version": "0.0.1",
+  "description": "Template for npm package",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "ava",
+    "lint": "tsc && eslint --fix ./src/**.ts && echo 'Lint complete.'",
+    "build": "tsc && webpack-cli",
+    "prepare": "npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "ava": "^2.2.0",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-ava": "^7.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "np": "^5.0.3",
+    "nyc": "^14.1.1",
+    "prettier": "^1.18.2",
+    "rosie": "^2.0.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kredito/npm-package.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "environment"
+  ],
+  "author": "Rafael Lecaros",
+  "license": "None",
+  "bugs": {
+    "url": "https://github.com/kredito/npm-package/issues"
+  },
+  "homepage": "https://github.com/kredito/npm-package#readme",
+  "directories": {
+    "src": "src",
+    "test": "test"
+  },
+  "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  }
+}
