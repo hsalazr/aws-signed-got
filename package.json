@@ -1,6 +1,6 @@
 {
   "name": "aws-signed-got",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Make AWSv4 signed requests with Got",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
