@@ -2,7 +2,7 @@ import got from 'got';
 import aws4 from 'aws4';
 import AWS from 'aws-sdk';
 
-const signedGot = got.extend({
+export default got.extend({
   hooks: {
     beforeRequest: [
       (request): void => {
@@ -36,5 +36,3 @@ const signedGot = got.extend({
     ],
   },
 });
-
-export default signedGot;
