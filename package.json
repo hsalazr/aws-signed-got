@@ -1,57 +1,50 @@
 {
-  "name": "@kredito/npm-package",
+  "name": "aws-signed-got",
   "version": "0.0.1",
-  "description": "Template for npm package",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
+  "description": "Make AWSv4 signed requests with Got",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "ava",
-    "lint": "tsc && eslint --fix ./src/**.ts && echo 'Lint complete.'",
-    "build": "tsc && webpack-cli",
-    "prepare": "npm run build"
+    "lint": "tsc && eslint ./**.ts && echo 'Lint complete.'",
+    "build": "tsc",
+    "prepare": "tsc"
   },
-  "dependencies": {},
+  "dependencies": {
+    "aws4": "^1.9.0",
+    "got": "^10.1.0"
+  },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-typescript": "^7.3.3",
+    "@types/aws4": "^1.5.1",
+    "@types/got": "^9.6.9",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
     "ava": "^2.2.0",
-    "babel-loader": "^8.0.6",
+    "aws-sdk": "^2.594.0",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-ava": "^7.1.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "np": "^5.0.3",
-    "nyc": "^14.1.1",
     "prettier": "^1.18.2",
-    "rosie": "^2.0.1",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.5.3",
-    "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.6"
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/kredito/npm-package.git"
+    "url": "git+ssh://git@github.com/hsalazr/aws-signed-got.git"
   },
   "keywords": [
-    "npm",
-    "node",
-    "environment"
+    "aws",
+    "api",
+    "got",
+    "sign"
   ],
-  "author": "Rafael Lecaros",
-  "license": "None",
+  "author": "Humberto Salazar Pacios",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kredito/npm-package/issues"
+    "url": "https://github.com/hsalazr/aws-signed-got/issues"
   },
-  "homepage": "https://github.com/kredito/npm-package#readme",
-  "directories": {
-    "src": "src",
-    "test": "test"
-  },
+  "homepage": "https://github.com/hsalazr/aws-signed-got#readme",
   "ava": {
     "compileEnhancements": false,
     "extensions": [
