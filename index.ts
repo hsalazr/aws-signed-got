@@ -10,26 +10,28 @@ export default got.extend({
         request.host = host;
         request.path = pathname + search;
 
-        let body = request.body;
-        if (body) {
-          if (typeof body === 'object') {
-            body = JSON.stringify(body);
-            request.body = body;
-            request.headers = request.headers || {};
-            request.headers['Content-Type'] = 'application/json';
-          }
+        if (request.json) {
+          request.body = JSON.stringify(request.json);
+          delete request.json;
         }
+
+        if (typeof request.body === 'object') {
+          request.body = JSON.stringify(request.body);
+          request.headers = request.headers || {};
+          request.headers['Content-Type'] = 'application/json';
+        }
+
         const { secretAccessKey, accessKeyId, sessionToken } = AWS.config.credentials || {};
         aws4.sign(
           {
             ...request,
-            body,
+            body: request.body,
           },
           {
             secretAccessKey,
             accessKeyId,
             sessionToken,
-            body,
+            body: request.body,
           },
         );
       },
